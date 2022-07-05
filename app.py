@@ -123,7 +123,7 @@ def logout():
 
 @app.route('/users/<int:user_id>/edit', methods = ["GET", "POST"])
 def user_edit(user_id):
-
+    """Only the user assigned to the global variable can access this page."""
     if not g.user:
         flash("Access unauthorized.", "danger")
         return redirect("/")
